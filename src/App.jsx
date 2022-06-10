@@ -1,6 +1,4 @@
-import { useState, usEffect } from 'react'
 import { Layout, Search, Contanier, Weather } from './components'
-import { getWeather } from './service/getWeather'
 
 function App() {
     console.log()
