@@ -1,4 +1,4 @@
-export default function Contanier({ isDay, code, temperature, text, day }) {
+export default function Container({ isDay, code, temperature, text, day }) {
     const styles = {
         imageIcon: `w-[340px] sm:w-[300px] md:w-[300px] pointer-events-none select-none mt-[10px]`,
         temperature: `font-black text-[150px] sm:text-[180px] leading-[120px] sm:leading-[150px] text-center bg-clip-text text-transparent bg-gradient-to-t from-slate-50 my-[10px] pl-[45px] pointer-events-none select-none w-full`,

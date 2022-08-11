@@ -4,17 +4,18 @@ import locationIcon from '../../assets/icon/location.svg'
 import disableLocationIcon from '../../assets/icon/disableLocation.svg'
 import  locationSearchingIcon from '../../assets/icon/locationSearching.svg'
 
-import {useGeoLocation} from '../../hook'
+import {useGeoLocation, useFetchCurrent} from '../../hook'
 
 
 
 export default function Search() {  
 
-   const {location} = useGeoLocation();
-   const [showLocation, setShowLocation] = useState(false);
+    const {location} = useGeoLocation();
+    const [showLocation, setShowLocation] = useState(false);
+    
+    const [search, setSearch] = useState('cuba');
+    const {data, loading, error} = useFetchCurrent(search)
 
-   const [search, setSearch] = useState('cuba');
-   
    const handleChange = (e) => {
     setSearch(e.target.value);
     }
@@ -24,8 +25,10 @@ export default function Search() {
     setSearch("cuba")
   };
 
+  console.log(data)
+
     useEffect(() => {
-   showLocation ? location.loaded ? setSearch(JSON.stringify(location.coordinates)) : setSearch("Loading your location...") : "";
+   showLocation ? location.loaded ? setSearch(location.coordinates.lat + "," + location.coordinates.lng) : setSearch("Loading your location...") : "";
     },  [location, showLocation]);
 
     return (

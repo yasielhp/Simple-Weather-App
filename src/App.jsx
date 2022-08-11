@@ -1,7 +1,7 @@
-import { Layout, Search, Contanier, Weather } from './components'
+import { Layout, Search, Container, Weather } from './components'
 
 function App() {
-    console.log()
+    
     const isDay = 1
     const location = 'Paris'
     const code = '1000'
@@ -18,7 +18,7 @@ function App() {
     return (
         <Layout isDay={isDay}>
             <Search location={location} />
-            <Contanier isDay={isDay} code={code} temperature={temperature} text={text} day={day} />
+            <Container isDay={isDay} code={code} temperature={temperature} text={text} day={day} />
             <Weather feelsLike={feelsLike} humidity={humidity} wind={wind} windDir={windDir} visibility={visibility} uvIndex={uvIndex} />
         </Layout>
     )
